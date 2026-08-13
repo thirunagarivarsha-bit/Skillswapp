@@ -10,6 +10,12 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
+@app.route("/")
+def home():
+    return {
+        "message": "SkillSwap API is running",
+        "status": "ok"
+    }
 
 SECRET = os.getenv("JWT_SECRET", "skillswap-demo-secret-2026")
 
